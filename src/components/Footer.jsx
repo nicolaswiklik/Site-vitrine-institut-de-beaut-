@@ -1,4 +1,4 @@
-import { navLinks, site } from '../data/site'
+import { copy, navLinks, site } from '../data/site'
 import { InstagramIcon } from './icons'
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
           <p className="font-serif text-3xl text-ivory">{site.name}</p>
           <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-light">{site.baseline}</p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed">
-            Ongles, cils, soins du visage et épilation à {site.city}. Des prestations personnalisées dans un cadre apaisant.
+            Épilation des sourcils au fil, soins du visage, extensions de cils, maquillage permanent et onglerie à {site.city}.
           </p>
           <a
             href={site.instagramUrl}
@@ -38,8 +38,15 @@ export default function Footer() {
           <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">Coordonnées</h2>
           <address className="mt-4 space-y-2.5 text-sm not-italic">
             <p>{street}<br />{zip} {city}</p>
+            {site.phone && (
+              <p>
+                <a href={`tel:${site.phoneHref}`} className="transition-colors hover:text-gold-light">{site.phone}</a>
+              </p>
+            )}
             <p>
-              <a href={`tel:${site.phoneHref}`} className="transition-colors hover:text-gold-light">{site.phone}</a>
+              <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold-light">
+                {site.instagramHandle}
+              </a>
             </p>
             <p>
               <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-gold-light underline underline-offset-4 hover:text-ivory">
@@ -52,7 +59,7 @@ export default function Footer() {
 
       <div className="border-t border-ivory/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-xs sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <p>© {new Date().getFullYear()} {site.name}. Tous droits réservés.</p>
+          <p className="max-w-xl text-ivory/70">{copy.demoNotice}</p>
           <ul className="flex gap-5">
             <li><a href="#/mentions-legales" className="hover:text-gold-light">Mentions légales</a></li>
             <li><a href="#/confidentialite" className="hover:text-gold-light">Politique de confidentialité</a></li>

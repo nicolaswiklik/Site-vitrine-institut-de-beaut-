@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { services, site } from '../data/site'
 import Button from './Button'
 import Reveal from './Reveal'
@@ -13,7 +13,7 @@ export default function Services() {
             id="prestations-title"
             eyebrow="Nos prestations"
             title="Des soins pensés pour vous"
-            text="Quatre univers de beauté, réalisés avec précision et douceur. Tarifs indicatifs, adaptés après échange lors de votre rendez-vous."
+            text="Des prestations personnalisées, réalisées avec précision. Retrouvez le détail de tous les soins et tarifs sur Planity."
           />
         </Reveal>
 
@@ -29,6 +29,7 @@ export default function Services() {
                     height="600"
                     loading="lazy"
                     decoding="async"
+                    style={{ objectPosition: service.position }}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
@@ -53,11 +54,11 @@ export default function Services() {
           ))}
         </ul>
 
-        <Reveal className="mt-10 flex justify-center">
-          <p className="inline-flex items-center gap-2 text-sm text-cocoa-soft">
-            <Check size={16} className="text-gold-deep" aria-hidden="true" />
-            Annulation gratuite jusqu’à 24h avant votre rendez-vous
-          </p>
+        <Reveal className="mt-12 flex justify-center">
+          <Button href={site.bookingUrl} variant="primary">
+            Voir toutes les prestations sur Planity
+            <ExternalLink size={16} aria-hidden="true" />
+          </Button>
         </Reveal>
       </div>
     </section>

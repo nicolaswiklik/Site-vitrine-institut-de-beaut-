@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react'
-import { legal, site } from '../data/site'
+import { copy, legal, site } from '../data/site'
 
 const { street, zip, city } = site.address
 
@@ -25,7 +25,9 @@ export default function LegalPage({ page }) {
               Ce site charge des polices (Google Fonts), des images (Unsplash) et une carte (Google Maps) depuis des
               services externes, qui peuvent recevoir votre adresse IP lors de la visite.
             </p>
-            <p>Pour toute question : {legal.email}.</p>
+            <p>
+              Pour toute question, contactez l’institut via Instagram ({site.instagramHandle}) ou sa fiche Planity.
+            </p>
           </>
         ) : (
           <>
@@ -35,10 +37,14 @@ export default function LegalPage({ page }) {
               Responsable de publication : {legal.owner}<br />
               {street}, {zip} {city}<br />
               SIRET : {legal.siret}<br />
-              Téléphone : {site.phone} — E-mail : {legal.email}
+              {site.phone && <>Téléphone : {site.phone}<br /></>}
+              {legal.email && <>E-mail : {legal.email}<br /></>}
+              Instagram : {site.instagramHandle}
             </p>
             <h2 className="text-3xl text-cocoa">Hébergement</h2>
             <p>{legal.host}</p>
+            <h2 className="text-3xl text-cocoa">Projet de démonstration</h2>
+            <p>{copy.demoNotice}. Ce site n’est pas le site officiel de l’établissement.</p>
             <h2 className="text-3xl text-cocoa">Propriété intellectuelle</h2>
             <p>
               Les textes et éléments graphiques de ce site sont la propriété de {site.name}. Les photographies

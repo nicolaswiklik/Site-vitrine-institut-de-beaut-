@@ -18,8 +18,8 @@ export default function Gallery() {
           <SectionHeading
             id="galerie-title"
             eyebrow="Galerie"
-            title="Nos réalisations"
-            text="Un aperçu de l’univers de l’institut et des résultats obtenus, soin après soin."
+            title="L’univers de l’institut"
+            text="Un aperçu des prestations proposées : regard, soins du visage, onglerie et bien-être. Photos d’illustration."
           />
         </Reveal>
 

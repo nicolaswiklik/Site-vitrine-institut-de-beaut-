@@ -32,7 +32,7 @@ export default function Navbar() {
     >
       <nav aria-label="Navigation principale" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
         <a href="#accueil" onClick={close} className="flex flex-col leading-none">
-          <span className="font-serif text-2xl font-semibold tracking-tight text-cocoa">{site.name}</span>
+          <span className="whitespace-nowrap font-serif text-xl font-semibold tracking-tight text-cocoa sm:text-2xl">{site.name}</span>
           <span className="mt-1 whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.22em] text-gold-deep sm:tracking-[0.3em]">
             {site.baseline}
           </span>

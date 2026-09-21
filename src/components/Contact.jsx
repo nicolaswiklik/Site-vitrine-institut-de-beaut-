@@ -1,4 +1,4 @@
-import { Clock, MapPin, Phone } from 'lucide-react'
+import { Clock, Link2, MapPin, Phone } from 'lucide-react'
 import { openingHours, site } from '../data/site'
 import { InstagramIcon } from './icons'
 import Button from './Button'
@@ -32,7 +32,7 @@ export default function Contact() {
             id="contact-title"
             eyebrow="Contact"
             title="Venez nous rencontrer"
-            text="Une question ou une envie particulière ? Appelez-nous, écrivez-nous sur Instagram ou réservez directement en ligne."
+            text={`Retrouvez l’institut au cœur de ${city}. Une question ? Écrivez-nous sur Instagram ou réservez directement en ligne sur Planity.`}
           />
         </Reveal>
 
@@ -46,11 +46,13 @@ export default function Contact() {
                   {zip} {city}
                 </address>
               </Item>
-              <Item icon={Phone} label="Téléphone">
-                <a href={`tel:${site.phoneHref}`} className="underline decoration-gold/60 underline-offset-4 hover:decoration-gold">
-                  {site.phone}
-                </a>
-              </Item>
+              {site.phone && (
+                <Item icon={Phone} label="Téléphone">
+                  <a href={`tel:${site.phoneHref}`} className="underline decoration-gold/60 underline-offset-4 hover:decoration-gold">
+                    {site.phone}
+                  </a>
+                </Item>
+              )}
               <Item icon={InstagramIcon} label="Instagram">
                 <a
                   href={site.instagramUrl}
@@ -61,6 +63,17 @@ export default function Contact() {
                   {site.instagramHandle}
                 </a>
               </Item>
+              <Item icon={Link2} label="Tous les liens">
+                <a
+                  href={site.linktreeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+                >
+                  linktr.ee/Artdesthetique
+                </a>
+              </Item>
+              {openingHours.length > 0 && (
               <Item icon={Clock} label="Horaires">
                 <table className="mt-1 w-full max-w-xs text-[15px]">
                   <caption className="sr-only">Horaires d’ouverture</caption>
@@ -74,9 +87,10 @@ export default function Contact() {
                   </tbody>
                 </table>
               </Item>
+              )}
               <li>
                 <Button href={site.bookingUrl} className="w-full sm:w-auto">
-                  Prendre rendez-vous
+                  Découvrir les disponibilités
                 </Button>
               </li>
             </ul>

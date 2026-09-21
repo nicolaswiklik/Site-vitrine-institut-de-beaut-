@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="reveal is-visible order-2 lg:order-1">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-deep">{copy.hero.eyebrow}</p>
           <h1 id="hero-title" className="mt-4 text-5xl leading-[1.05] text-cocoa sm:text-6xl lg:text-7xl">
-            Révélez votre <em className="italic text-gold-deep">beauté naturelle</em>
+            {copy.hero.titleLead} <em className="italic text-gold-deep">{copy.hero.titleAccent}</em>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-cocoa-soft">{copy.hero.text}</p>
 
@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           <a
-            href={site.googleReviewsUrl}
+            href={site.reviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 inline-flex items-center gap-3 rounded-2xl border border-sand-deep bg-white/60 px-4 py-3 shadow-soft transition-colors hover:bg-white"
@@ -37,7 +37,7 @@ export default function Hero() {
               <strong className="font-semibold text-cocoa">
                 {site.rating.score}/{site.rating.outOf}
               </strong>{' '}
-              sur {site.rating.source} · {site.rating.count}+ clientes satisfaites
+              sur {site.rating.source} · {site.rating.label}
             </span>
           </a>
         </div>
@@ -50,7 +50,7 @@ export default function Hero() {
             />
             <img
               src={images.hero}
-              alt="Portrait d’une femme au teint lumineux, cheveux châtains lisses, regard doux"
+              alt="Esthéticienne réalisant une épilation des sourcils au fil sur une cliente"
               width="1000"
               height="1250"
               fetchPriority="high"
@@ -59,7 +59,7 @@ export default function Hero() {
             />
             <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-cocoa px-5 py-3 text-sm text-ivory shadow-lift sm:left-auto sm:-left-6 sm:translate-x-0">
               <Star size={16} className="fill-gold text-gold" aria-hidden="true" />
-              Institut indépendant · {site.city}
+              Spécialiste du fil · {site.city}
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
-import { HeartHandshake, Leaf, ShieldCheck } from 'lucide-react'
+import { Award, HeartHandshake, ShieldCheck } from 'lucide-react'
 import { about, images, site } from '../data/site'
 import Button from './Button'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-const icons = { Leaf, HeartHandshake, ShieldCheck }
+const icons = { Award, HeartHandshake, ShieldCheck }
 
 export default function About() {
   return (
@@ -14,7 +14,7 @@ export default function About() {
           <span aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-3xl border border-gold/60" />
           <img
             src={images.portrait}
-            alt={`Portrait de ${about.name}, ${about.role.toLowerCase()}`}
+            alt="Restructuration des sourcils réalisée en institut"
             width="800"
             height="1000"
             loading="lazy"
@@ -29,7 +29,7 @@ export default function About() {
               id="a-propos-title"
               align="left"
               eyebrow="À propos"
-              title="Une beauté simple, sincère et sur mesure"
+              title={about.title}
             />
             <p className="mt-6 font-serif text-xl italic text-gold-deep">
               {about.name} — {about.role}
